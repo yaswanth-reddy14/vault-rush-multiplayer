@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: vault-rush
+    runtime: node
+    plan: starter
+    numInstances: 1
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    autoDeployTrigger: 'off'
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.21.0
+      - key: ROOM_TTL_MS
+        value: '1800000'
+# RENDER_EXTERNAL_URL supplies the default HTTPS origin automatically.
+# Set PUBLIC_ORIGIN explicitly when serving a custom domain.

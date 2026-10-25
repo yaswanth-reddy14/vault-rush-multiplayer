@@ -1,0 +1,11 @@
+node_modules
+dependencies-backup
+package-lock.backup
+dist
+.git
+.env
+.env.*
+!.env.example
+artifacts
+test-results
+playwright-report
